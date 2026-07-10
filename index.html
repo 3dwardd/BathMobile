@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BathMobile | Car Wash Reservation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="BathMobile home">
+      <img class="brand-logo" src="bathmobile.logo.svg" alt="BathMobile logo">
+      <span>BathMobile</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#booking">Book</a>
+      <a href="#process">Process</a>
+      <a href="#services">Services</a>
+      <a href="#sizes">Sizes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Door-to-door and in-shop carwash reservations</p>
+        <h1>BathMobile</h1>
+        <p class="hero-copy">
+          Choose your preferred service, select a package, pick a schedule, and send your reservation request.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#booking">Start Booking</a>
+        </div>
+      </div>
+
+      <form class="booking-panel" id="booking" action="#" method="post">
+        <div class="panel-heading">
+          <p>Start Booking</p>
+          <span>Customer Reservation</span>
+        </div>
+        <div class="form-grid">
+          <label>
+            Service Location
+            <select name="service_location">
+              <option>Home Service</option>
+              <option>In-Shop Wash</option>
+            </select>
+          </label>
+          <label>
+            Package
+            <select name="package">
+              <option>Value Bath</option>
+              <option>Wax N Bath</option>
+              <option>Prime Bath</option>
+              <option>Interior Detailing</option>
+              <option>Exterior Detailing</option>
+              <option>Ceramic Coating</option>
+            </select>
+          </label>
+          <label>
+            Vehicle Size
+            <select name="vehicle_size">
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>X-Large</option>
+              <option>Vans</option>
+              <option>Motorcycle</option>
+            </select>
+          </label>
+          <label>
+            Preferred Schedule
+            <input type="datetime-local" name="schedule">
+          </label>
+          <label class="wide-field">
+            Address or Shop Visit Note
+            <input type="text" name="address" placeholder="Enter home address or type In-Shop Visit">
+          </label>
+        </div>
+        <button type="submit">Reserve Slot</button>
+      </form>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="section-heading centered">
+        <p class="eyebrow">Reservation Process</p>
+        <h2>How customers book a service</h2>
+      </div>
+      <div class="flow">
+        <article class="flow-step">
+          <span>1</span>
+          <h3>Choose Location</h3>
+          <p>Select Home Service or In-Shop Wash depending on where you want the carwash done.</p>
+        </article>
+        <article class="flow-step">
+          <span>2</span>
+          <h3>Select Package</h3>
+          <p>Pick a carwash, interior detailing, exterior detailing, or add-on service.</p>
+        </article>
+        <article class="flow-step">
+          <span>3</span>
+          <h3>Set Schedule</h3>
+          <p>Choose your preferred date and time, then enter your address if booking home service.</p>
+        </article>
+        <article class="flow-step">
+          <span>4</span>
+          <h3>Send Request</h3>
+          <p>Submit the reservation so staff can confirm availability and service details.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading centered">
+        <p class="eyebrow">Service Options</p>
+        <h2>Choose Home Service or In-Shop Wash</h2>
+      </div>
+
+      <div class="service-tabs" role="tablist" aria-label="Service type">
+        <button class="service-tab active" type="button" role="tab" aria-selected="true" data-target="home-service-panel">
+          Home Service
+        </button>
+        <button class="service-tab" type="button" role="tab" aria-selected="false" data-target="shop-service-panel">
+          In-Shop Wash
+        </button>
+      </div>
+
+      <div class="service-panel active" id="home-service-panel" role="tabpanel">
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>Home Service Carwash</h3>
+            <p>Packages copied from the home service price list.</p>
+          </div>
+          <div class="package-grid three-columns">
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Value Bath</h4>
+                <p>Starter Wash - 30 minutes</p>
+              </div>
+              <ul>
+                <li>Pressurized foam wash</li>
+                <li>Interior cleaning</li>
+                <li>Interior vacuum</li>
+                <li>Disinfectant wipe</li>
+                <li>Tire black</li>
+                <li>Blow dry</li>
+                <li>Fuel tank inlet cleaning</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;330</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;420</dd></div>
+                <div><dt>Large</dt><dd>&#8369;450</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;570</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;620</dd></div>
+                <div><dt>Scooter</dt><dd>&#8369;150</dd></div>
+                <div><dt>Big Bike</dt><dd>&#8369;200</dd></div>
+              </dl>
+            </article>
+
+            <article class="package-card featured-card">
+              <div class="package-header orange">
+                <h4>Wax N Bath</h4>
+                <p>Signature Wash - 60 minutes</p>
+              </div>
+              <ul>
+                <li>Everything in Value Bath</li>
+                <li>Armor shine</li>
+                <li>Interior protectant</li>
+                <li>Glass cleaning</li>
+                <li>Exterior hydrophobic paste wax</li>
+                <li>Hand buffing</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;550</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;600</dd></div>
+                <div><dt>Large</dt><dd>&#8369;700</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;750</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;900</dd></div>
+              </dl>
+              <p class="note">Upgrade: machine buff +&#8369;250, Meguiar's ceramic wax +&#8369;300.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Prime Bath</h4>
+                <p>Spa Wash + Anti Bac - 90 minutes</p>
+              </div>
+              <ul>
+                <li>Everything in Value Bath</li>
+                <li>Everything in Wax N Bath</li>
+                <li>Engine bay cleaning</li>
+                <li>Windshield water repellent</li>
+                <li>Bac-to-Zero disinfectant</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;800</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;850</dd></div>
+                <div><dt>Large</dt><dd>&#8369;950</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;1000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;1150</dd></div>
+              </dl>
+              <p class="note">Upgrade: engine wash +&#8369;250, MTX Bac-to-Zero +&#8369;250.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>Home Service Interior Detailing</h3>
+            <p>Prices vary by vehicle size and package depth.</p>
+          </div>
+          <div class="package-grid three-columns">
+            <article class="package-card">
+              <div class="package-header orange">
+                <h4>Seat &amp; Carpet Pull Out</h4>
+                <p>1-2 days</p>
+              </div>
+              <ul>
+                <li>Seat and carpet removal</li>
+                <li>Seat upholstery steam cleaning</li>
+                <li>Headliner steam cleaning</li>
+                <li>Carpet shampoo</li>
+                <li>Door panel cleaning</li>
+                <li>Dashboard and trim cleaning</li>
+                <li>Stain removal</li>
+                <li>Interior protectant</li>
+                <li>Armor shine</li>
+                <li>Bac-to-Zero disinfectant</li>
+                <li>Free Value Bath</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;5500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;6000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;6500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;7000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;7500</dd></div>
+              </dl>
+              <p class="note">Best for heavy dirt, flood damage recovery, mold, spills, stains, odors, and neglected vehicles.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Seat Pull Out Only</h4>
+                <p>1-2 days</p>
+              </div>
+              <ul>
+                <li>Seat removal</li>
+                <li>Seat upholstery steam cleaning</li>
+                <li>Headliner steam cleaning</li>
+                <li>Carpet steam cleaning</li>
+                <li>Door panel cleaning</li>
+                <li>Dashboard and trim cleaning</li>
+                <li>Stain removal</li>
+                <li>Interior protectant</li>
+                <li>Armor shine</li>
+                <li>Bac-to-Zero disinfectant</li>
+                <li>Free Value Bath</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;4500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;5000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;5500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;6000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;6500</dd></div>
+              </dl>
+              <p class="note">Best for moderate dirt, upholstery stains, and post-road trip cleaning.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>No Baklas</h4>
+                <p>1 day</p>
+              </div>
+              <ul>
+                <li>Seat and carpet steam cleaning</li>
+                <li>Headliner steam cleaning</li>
+                <li>Door panel cleaning</li>
+                <li>Dashboard and trim cleaning</li>
+                <li>Interior protectant</li>
+                <li>Armor shine</li>
+                <li>Bac-to-Zero disinfectant</li>
+                <li>Free Value Bath</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;3500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;4000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;4500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;5000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;5500</dd></div>
+              </dl>
+              <p class="note">Best for routine maintenance and minor dirt accumulation.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>Home Service Exterior Detailing</h3>
+            <p>Exterior restoration, ceramic coating, trim, engine, and glass services.</p>
+          </div>
+          <div class="package-grid three-columns compact-grid">
+            <article class="package-card">
+              <div class="package-header orange">
+                <h4>Exterior Detail</h4>
+                <p>1-2 days</p>
+              </div>
+              <ul>
+                <li>Clay bar decontamination</li>
+                <li>Scratch removal</li>
+                <li>Acid rain removal</li>
+                <li>Asphalt and cement removal</li>
+                <li>Degriming and buffing</li>
+                <li>Headlight restoration</li>
+                <li>Wheel cleaning</li>
+                <li>5-step signature shine</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;5500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;6500</dd></div>
+                <div><dt>Large</dt><dd>&#8369;7500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;8500</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;9500</dd></div>
+              </dl>
+              <p class="note">Upgrade to Back to Black Trim Restoration +&#8369;500.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Ceramic Coating</h4>
+                <p>2-3 days</p>
+              </div>
+              <ul>
+                <li>5-step full exterior detailing</li>
+                <li>3-layer premium Japan ceramic coating</li>
+                <li>3 years warranty with proper care</li>
+                <li>Return after 1 week for free wash</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Motorcycle</dt><dd>&#8369;3500</dd></div>
+                <div><dt>Big Bike</dt><dd>&#8369;4500</dd></div>
+                <div><dt>Small</dt><dd>&#8369;10500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;11500</dd></div>
+                <div><dt>Large</dt><dd>&#8369;12500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;13500</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;14500</dd></div>
+              </dl>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Back to Black Trim</h4>
+                <p>Plastic and rubber restoration</p>
+              </div>
+              <ul>
+                <li>Interior door trims and panels</li>
+                <li>Windshield cowlings</li>
+                <li>Mirror housings</li>
+                <li>Window trim</li>
+                <li>Head rails</li>
+                <li>Mud guards</li>
+                <li>Bumpers</li>
+                <li>Running boards</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;450</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;550</dd></div>
+                <div><dt>Large</dt><dd>&#8369;950</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;1050</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;1100</dd></div>
+              </dl>
+              <p class="note">Interior and exterior restoration are charged separately.</p>
+            </article>
+
+            <article class="package-card mini-card">
+              <h4>Engine Detail</h4>
+              <ul>
+                <li>Engine wash</li>
+                <li>Degreasing</li>
+                <li>Detail brushing</li>
+                <li>Polishing and dressing</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;3500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;3500</dd></div>
+                <div><dt>Large</dt><dd>&#8369;4000</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;4000</dd></div>
+              </dl>
+            </article>
+
+            <article class="package-card mini-card">
+              <h4>Headlight Restoration</h4>
+              <ul>
+                <li>With protection and ceramic coating: &#8369;3000</li>
+                <li>Basic restoration: &#8369;2500</li>
+                <li>Front and exterior only</li>
+              </ul>
+              <h4>Watermarks / Acid Rain Removal</h4>
+              <ul>
+                <li>Glass: &#8369;1500</li>
+                <li>Body: &#8369;500 per panel</li>
+                <li>Add sunroof: +&#8369;200</li>
+              </ul>
+            </article>
+
+            <article class="package-card mini-card">
+              <h4>Color Revival Buff</h4>
+              <ul>
+                <li>2-step buffing and shine process</li>
+                <li>Removes stubborn exterior stains</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;2500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;3000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;4000</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;5000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;6000</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>Home Service Add-ons</h3>
+            <p>Extra services from the home service price list.</p>
+          </div>
+          <div class="addon-grid">
+            <span>Seat cover installation: &#8369;150 - &#8369;250</span>
+            <span>Seat cover removal: &#8369;150 - &#8369;250</span>
+            <span>Engine wash: &#8369;500</span>
+            <span>Windshield watermarks removal: &#8369;300</span>
+            <span>Bac-to-Zero: &#8369;300</span>
+            <span>MTX Bac-to-Zero: &#8369;500</span>
+            <span>Minor scratch removal: &#8369;500</span>
+            <span>Extractor / wet vacuum: &#8369;200</span>
+            <span>Armor shine: &#8369;100</span>
+            <span>Sticker removal per panel: &#8369;500</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-panel" id="shop-service-panel" role="tabpanel" hidden>
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>In-Shop Carwash</h3>
+            <p>Packages copied from the shop carwash price list.</p>
+          </div>
+          <div class="package-grid four-columns">
+            <article class="package-card">
+              <div class="package-header gray">
+                <h4>Motorcycle Bath</h4>
+                <p>Motorcycle wash</p>
+              </div>
+              <ul>
+                <li>Pressurized foam wash</li>
+                <li>Tire black</li>
+                <li>Blow dry</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Scooters, Underbone</dt><dd>&#8369;100</dd></div>
+                <div><dt>Big Bikes</dt><dd>&#8369;150</dd></div>
+              </dl>
+              <p class="note">Upgrade to Wax &amp; Armor Shine +&#8369;50.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Value Bath</h4>
+                <p>Starter Wash</p>
+              </div>
+              <ul>
+                <li>Pressurized foam wash</li>
+                <li>Disinfectant wipe</li>
+                <li>Interior vacuum</li>
+                <li>Tire black</li>
+                <li>Blow dry</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;180</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;200</dd></div>
+                <div><dt>Large</dt><dd>&#8369;250</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;300</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;350</dd></div>
+              </dl>
+            </article>
+
+            <article class="package-card featured-card">
+              <div class="package-header orange">
+                <h4>Wax N Bath</h4>
+                <p>Signature Wash - 60 minutes</p>
+              </div>
+              <ul>
+                <li>Everything in Value Bath</li>
+                <li>Armor shine</li>
+                <li>Interior protectant</li>
+                <li>Glass cleaning</li>
+                <li>Exterior hydrophobic paste wax</li>
+                <li>Hand buffing</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;450</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;500</dd></div>
+                <div><dt>Large</dt><dd>&#8369;600</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;650</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;800</dd></div>
+              </dl>
+              <p class="note">Upgrade: machine buff +&#8369;250, Meguiar's ceramic wax +&#8369;300.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Prime Bath</h4>
+                <p>Spa Wash + Anti Bac - 90 minutes</p>
+              </div>
+              <ul>
+                <li>Everything in Value Bath</li>
+                <li>Everything in Wax N Bath</li>
+                <li>Engine bay cleaning</li>
+                <li>Windshield water repellent</li>
+                <li>Bac-to-Zero disinfectant</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;600</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;650</dd></div>
+                <div><dt>Large</dt><dd>&#8369;750</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;800</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;950</dd></div>
+              </dl>
+              <p class="note">Upgrade: engine wash +&#8369;250, MTX Bac-to-Zero +&#8369;250.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>In-Shop Interior Detailing</h3>
+            <p>Interior detailing rates for customers visiting the shop.</p>
+          </div>
+          <div class="package-grid three-columns">
+            <article class="package-card">
+              <div class="package-header orange">
+                <h4>Seat &amp; Carpet Pull Out</h4>
+                <p>1-2 days</p>
+              </div>
+              <ul>
+                <li>Seat and carpet removal</li>
+                <li>Seat upholstery steam cleaning</li>
+                <li>Headliner steam cleaning</li>
+                <li>Carpet shampoo</li>
+                <li>Door panel cleaning</li>
+                <li>Dashboard and trim cleaning</li>
+                <li>Stain removal</li>
+                <li>Interior protectant</li>
+                <li>Armor shine</li>
+                <li>Bac-to-Zero disinfectant</li>
+                <li>Free Value Bath</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;4500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;5000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;5500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;6000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;6500</dd></div>
+              </dl>
+              <p class="note">Best for heavy dirt and deep restoration needs.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>Seat Pull Out Only</h4>
+                <p>1-2 days</p>
+              </div>
+              <ul>
+                <li>Seat removal</li>
+                <li>Seat upholstery steam cleaning</li>
+                <li>Headliner steam cleaning</li>
+                <li>Carpet steam cleaning</li>
+                <li>Door panel cleaning</li>
+                <li>Dashboard and trim cleaning</li>
+                <li>Stain removal</li>
+                <li>Interior protectant</li>
+                <li>Armor shine</li>
+                <li>Bac-to-Zero disinfectant</li>
+                <li>Free Value Bath</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;3500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;4000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;4500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;5000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;5500</dd></div>
+              </dl>
+              <p class="note">Best for moderate dirt and upholstery stains.</p>
+            </article>
+
+            <article class="package-card">
+              <div class="package-header blue">
+                <h4>No Baklas</h4>
+                <p>1 day</p>
+              </div>
+              <ul>
+                <li>Seat and carpet steam cleaning</li>
+                <li>Headliner steam cleaning</li>
+                <li>Door panel cleaning</li>
+                <li>Dashboard and trim cleaning</li>
+                <li>Interior protectant</li>
+                <li>Armor shine</li>
+                <li>Bac-to-Zero disinfectant</li>
+                <li>Free Value Bath</li>
+              </ul>
+              <dl class="price-list">
+                <div><dt>Small</dt><dd>&#8369;2500</dd></div>
+                <div><dt>Medium</dt><dd>&#8369;3000</dd></div>
+                <div><dt>Large</dt><dd>&#8369;3500</dd></div>
+                <div><dt>X-Large</dt><dd>&#8369;4000</dd></div>
+                <div><dt>Vans</dt><dd>&#8369;4500</dd></div>
+              </dl>
+              <p class="note">Best for surface-level cleaning and routine maintenance.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>In-Shop Other Services and Add-ons</h3>
+            <p>Additional services listed on the in-shop price image.</p>
+          </div>
+          <div class="addon-grid">
+            <span>Vacuum only: &#8369;130 - &#8369;300</span>
+            <span>Exterior wash only: &#8369;130 - &#8369;300</span>
+            <span>Seat cover install/removal: &#8369;150 - &#8369;250</span>
+            <span>Engine wash: &#8369;500</span>
+            <span>Windshield watermarks removal: &#8369;300</span>
+            <span>Bac-to-Zero: &#8369;300</span>
+            <span>MTX Bac-to-Zero: &#8369;500</span>
+            <span>Minor scratch removal: &#8369;500</span>
+            <span>Extractor / wet vacuum: &#8369;200</span>
+            <span>Armor shine: &#8369;100</span>
+            <span>Sticker removal per panel: &#8369;500</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section size-section" id="sizes">
+      <div class="section-heading centered">
+        <p class="eyebrow">Vehicle Size Guide</p>
+        <h2>Use this when choosing your package</h2>
+      </div>
+      <div class="size-grid">
+        <article>
+          <h3>Small</h3>
+          <p>Hatchbacks, sedan</p>
+        </article>
+        <article>
+          <h3>Medium</h3>
+          <p>Crossover, mini-SUVs, compact SUV, sports cars, mid-sized sedan</p>
+        </article>
+        <article>
+          <h3>Large</h3>
+          <p>Mid-size SUV, AUV, pick-up trucks, MPV, 7-seater</p>
+        </article>
+        <article>
+          <h3>X-Large</h3>
+          <p>Off-road pick-up trucks, full-size SUV</p>
+        </article>
+        <article>
+          <h3>Vans</h3>
+          <p>9-18 seats, vans</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>BathMobile: Door-to-Door and In-Shop Carwash Reservation</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script>
+    const serviceTabs = document.querySelectorAll(".service-tab");
+    const servicePanels = document.querySelectorAll(".service-panel");
+
+    serviceTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.dataset.target;
+
+        serviceTabs.forEach((item) => {
+          const isActive = item === tab;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-selected", String(isActive));
+        });
+
+        servicePanels.forEach((panel) => {
+          const isActive = panel.id === targetId;
+          panel.classList.toggle("active", isActive);
+          panel.hidden = !isActive;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
