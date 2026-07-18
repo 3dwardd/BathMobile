@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BathMobile | Car Wash Reservation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="BathMobile home">
+      <img class="brand-logo" src="bathmobile.logo.jpg" alt="BathMobile logo">
+      <span>BathMobile</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#booking">Booking</a>
+      <a href="#service-price">Service Price</a>
+      <a href="#process">Process</a>
+      <a href="#services">Services</a>
+      <a href="#sizes">Sizes</a>
+      <a href="view.html">View Bookings</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Door-to-door and in-shop carwash reservations</p>
+        <h1>BathMobile</h1>
+        <p class="hero-copy">Choose your preferred service, select a package, pick a schedule, and view the estimated service price before submitting your reservation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#booking">Start Booking</a>
+          <a class="button secondary" href="#service-price">Check Price</a>
+        </div>
+      </div>
+
+      <div class="booking-shell">
+        <div class="panel-tabs" role="tablist" aria-label="Booking and price tabs">
+          <button class="panel-tab active" type="button" role="tab" aria-selected="true" data-target="booking-panel">Booking</button>
+          <button class="panel-tab" type="button" role="tab" aria-selected="false" data-target="service-price-panel">Service Price</button>
+        </div>
+
+        <section class="panel active" id="booking-panel" role="tabpanel">
+          <form class="booking-form" id="booking" method="post" novalidate>
+            <div class="panel-heading">
+              <div>
+                <p>Start Booking</p>
+                <span>Customer Reservation</span>
+              </div>
+              <a class="inline-link" href="view.html">Open Dashboard</a>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                Service Location
+                <select name="service_location" id="service_location" required>
+                  <option value="Home Service">Home Service</option>
+                  <option value="In-Shop Wash">In-Shop Wash</option>
+                </select>
+              </label>
+
+              <label>
+                Package
+                <select name="package" id="package" required></select>
+              </label>
+
+              <label>
+                Vehicle Size
+                <select name="vehicle_size" id="vehicle_size" required></select>
+              </label>
+
+              <label>
+                Preferred Date
+                <input type="date" name="booking_date" id="booking_date" required>
+              </label>
+
+              <label>
+                Preferred Time
+                <select name="booking_time" id="booking_time" required>
+                  <option value="">Select Time</option>
+                  <option value="07:00:00">7:00 AM</option>
+                  <option value="08:00:00">8:00 AM</option>
+                  <option value="09:00:00">9:00 AM</option>
+                  <option value="10:00:00">10:00 AM</option>
+                  <option value="11:00:00">11:00 AM</option>
+                  <option value="12:00:00">12:00 PM</option>
+                  <option value="13:00:00">1:00 PM</option>
+                  <option value="14:00:00">2:00 PM</option>
+                  <option value="15:00:00">3:00 PM</option>
+                  <option value="16:00:00">4:00 PM</option>
+                  <option value="17:00:00">5:00 PM</option>
+                </select>
+              </label>
+
+              <label class="wide-field">
+                Address or Shop Visit Note
+                <input type="text" name="address" id="address" placeholder="Enter home address or type In-Shop Visit" required>
+              </label>
+            </div>
+
+            <div class="price-preview">
+              <span>Estimated Price</span>
+              <strong id="estimated_price">₱0</strong>
+              <small id="price_hint">Select a service package and vehicle size.</small>
+            </div>
+
+            <button type="submit">Reserve Slot</button>
+          </form>
+        </section>
+
+        <section class="panel" id="service-price-panel" role="tabpanel" hidden>
+          <div class="service-price-tabs" role="tablist" aria-label="Service price categories">
+            <button class="mini-tab active" type="button" data-price-target="home-price">Home Service</button>
+            <button class="mini-tab" type="button" data-price-target="shop-price">In-Shop Wash</button>
+          </div>
+
+          <div class="price-panel active" id="home-price"></div>
+          <div class="price-panel" id="shop-price" hidden></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="section-heading centered">
+        <p class="eyebrow">Reservation Process</p>
+        <h2>How customers book a service</h2>
+      </div>
+      <div class="flow">
+        <article class="flow-step"><span>1</span><h3>Choose Location</h3><p>Select Home Service or In-Shop Wash depending on where you want the carwash done.</p></article>
+        <article class="flow-step"><span>2</span><h3>Select Package</h3><p>Pick the package that matches your vehicle and the type of cleaning you need.</p></article>
+        <article class="flow-step"><span>3</span><h3>Set Schedule</h3><p>Choose your preferred date and time, then enter your address if booking home service.</p></article>
+        <article class="flow-step"><span>4</span><h3>Send Request</h3><p>Submit the reservation so you can review it later in the dashboard.</p></article>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading centered">
+        <p class="eyebrow">Service Options</p>
+        <h2>Home Service and In-Shop Wash</h2>
+      </div>
+
+      <div class="service-tabs" role="tablist" aria-label="Service type">
+        <button class="service-tab active" type="button" data-target="home-service-panel">Home Service</button>
+        <button class="service-tab" type="button" data-target="shop-service-panel">In-Shop Wash</button>
+      </div>
+
+      <div class="service-panel active" id="home-service-panel" role="tabpanel">
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>Home Service Carwash</h3>
+            <p>Packages and estimated rates for door-to-door services.</p>
+          </div>
+          <div class="package-grid three-columns" id="home-service-packages"></div>
+        </div>
+      </div>
+
+      <div class="service-panel" id="shop-service-panel" role="tabpanel" hidden>
+        <div class="category-block">
+          <div class="category-heading">
+            <h3>In-Shop Carwash</h3>
+            <p>Packages and estimated rates for in-shop services.</p>
+          </div>
+          <div class="package-grid three-columns" id="shop-service-packages"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section size-section" id="sizes">
+      <div class="section-heading centered">
+        <p class="eyebrow">Vehicle Size Guide</p>
+        <h2>Use this when choosing your package</h2>
+      </div>
+      <div class="size-grid">
+        <article><h3>Small</h3><p>Hatchbacks, sedan</p></article>
+        <article><h3>Medium</h3><p>Crossover, mini-SUVs, compact SUV, sports cars, mid-sized sedan</p></article>
+        <article><h3>Large</h3><p>Mid-size SUV, AUV, pick-up trucks, MPV, 7-seater</p></article>
+        <article><h3>X-Large</h3><p>Off-road pick-up trucks, full-size SUV</p></article>
+        <article><h3>Vans</h3><p>9-18 seats, vans</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>BathMobile: Door-to-Door and In-Shop Carwash Reservation</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <template id="package-card-template">
+    <article class="package-card">
+      <div class="package-header">
+        <h4></h4>
+        <p></p>
+      </div>
+      <ul></ul>
+      <dl class="price-list"></dl>
+      <p class="note"></p>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
