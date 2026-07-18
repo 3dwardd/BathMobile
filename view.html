@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BathMobile | Saved Reservations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard" class="dashboard-page">
+  <header class="site-header">
+    <a class="brand" href="index.html#booking" aria-label="BathMobile home">
+      <img class="brand-logo" src="bathmobile.logo.svg" alt="BathMobile logo">
+      <span>BathMobile</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#active">Active</a>
+      <a href="#completed">Completed</a>
+      <a href="#cancelled">Cancelled</a>
+      <a href="index.html#booking">Back to Site</a>
+    </nav>
+  </header>
+
+  <section class="dashboard-hero">
+    <div class="dashboard-wrap">
+      <p class="eyebrow">Reservation Dashboard</p>
+      <h1>Saved Reservations</h1>
+      <p>Mark a booking as Done or Cancelled. Once updated, it leaves the Active tab and moves into its own archive tab.</p>
+    </div>
+  </section>
+
+  <div class="notice success" id="success_notice" hidden>Reservation saved successfully.</div>
+  <div class="notice error" id="error_notice" hidden>Something went wrong while updating the status.</div>
+
+  <div class="stats-grid">
+    <div class="stat-card"><h3 id="total_count">0</h3><p>Total</p></div>
+    <div class="stat-card"><h3 id="pending_count">0</h3><p>Pending</p></div>
+    <div class="stat-card"><h3 id="done_count">0</h3><p>Done</p></div>
+    <div class="stat-card"><h3 id="cancelled_count">0</h3><p>Cancelled</p></div>
+  </div>
+
+  <section class="reservation-section">
+    <div class="dashboard-wrap">
+      <div class="tabs" role="tablist" aria-label="Reservation status">
+        <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-target="active">Active</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-target="completed">Completed</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-target="cancelled">Cancelled</button>
+      </div>
+
+      <div class="tab-panel active" id="active" role="tabpanel"></div>
+      <div class="tab-panel" id="completed" role="tabpanel" hidden></div>
+      <div class="tab-panel" id="cancelled" role="tabpanel" hidden></div>
+
+      <a class="back-link" href="index.html#booking">← Back to BathMobile site</a>
+    </div>
+  </section>
+
+  <template id="reservation-card-template">
+    <article class="reservation-card">
+      <div class="reservation-card-header">
+        <div>
+          <h3></h3>
+          <p></p>
+        </div>
+        <span class="status-pill"></span>
+      </div>
+      <div class="reservation-card-body">
+        <div class="info-grid"></div>
+        <div class="action-bar"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
